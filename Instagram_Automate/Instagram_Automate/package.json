@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "child-process": "^1.0.2",
+    "node-cron": "^3.0.2",
+    "puppeteer": "^21.0.3",
+    "robotjs": "^0.6.0",
+    "selenium-webdriver": "^4.11.1"
+  }
+}
