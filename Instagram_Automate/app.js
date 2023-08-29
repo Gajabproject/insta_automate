@@ -1,6 +1,6 @@
 const { Builder, By, Key, until } = require('selenium-webdriver');
 const robot = require('robotjs');
-async function exampleAutomation() {
+const f1=async(imgPath)=> {
     // Create a new instance of the browser
     const driver = await new Builder().forBrowser('chrome').build();
 
@@ -24,6 +24,7 @@ async function exampleAutomation() {
         await new Promise(resolve => setTimeout(resolve, 2000));
         await button2.click();
         await new Promise(resolve => setTimeout(resolve, 5000));
+        // const textToClick = 'Not now'; Uncomment for MacOS
         const textToClick = 'Not Now';
         const textToClick1 = 'Not Now';
         await new Promise(resolve => setTimeout(resolve, 3000));        
@@ -44,6 +45,7 @@ async function exampleAutomation() {
         // Type content into the input field
         await svgWithAriaLabel.click();
         await new Promise(resolve => setTimeout(resolve, 5000));
+        // const buttonText = 'Select From Computer'; //Uncomment for MacOS
         const buttonText = 'Select from computer'; // Replace with the actual button text
         const buttonWithText = await driver.findElement(By.xpath(`//button[text()="${buttonText}"]`));
         // Wait for a specific condition (e.g., page title)
@@ -54,7 +56,7 @@ async function exampleAutomation() {
         await dropArea.click();
         await new Promise(resolve => setTimeout(resolve, 5000));
         const str=String.raw`C:\Users\vaibhav\Code\Instagram_Automate\Instagram_Automate\Images\1.png`;
-        robot.typeString(str); // Replace with your file path
+        robot.typeString(imgPath); // Replace with your file path
         robot.keyTap('enter');
         await driver.sleep(2000);
         robot.keyTap('enter');
@@ -87,4 +89,4 @@ async function exampleAutomation() {
     }
 }
 
-exampleAutomation();
+module.exports['f1']=f1
